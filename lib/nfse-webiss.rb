@@ -8,5 +8,6 @@ module NfseWebiss
     autoload :Base, 'nfse-webiss/gateways/base'
     autoload :Webiss, 'nfse-webiss/gateways/webiss'
     autoload :ModernizacaoPublica, 'nfse-webiss/gateways/modernizacao_publica'
+    autoload :El, 'nfse-webiss/gateways/el'
   end
 end

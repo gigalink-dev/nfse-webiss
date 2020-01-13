@@ -1,0 +1,91 @@
+%ns1:Rps
+  %ns1:InfDeclaracaoPrestacaoServico{ Id: numero }
+    %ns1:Rps{ Id: numero }
+      %ns1:IdentificacaoRps
+        %ns1:Numero= numero
+        %ns1:Serie= serie
+        %ns1:Tipo= tipo
+
+      %ns1:DataEmissao= data_emissao.is_a?(String) ? data_emissao : data_emissao.strftime('%F')
+      %ns1:Status= status
+
+    %ns1:Competencia= data_emissao.is_a?(String) ? data_emissao : data_emissao.strftime('%F')
+
+    %ns1:Servico
+      %ns1:Valores
+        %ns1:ValorServicos= valor_servicos ? valor_servicos.round(2) : 0.00
+        - if valor_deducoes
+          %ns1:ValorDeducoes= valor_deducoes.round(2)
+        - if valor_pis
+          %ns1:ValorPis= valor_pis.round(2)
+        - if valor_cofins
+          %ns1:ValorCofins= valor_cofins.round(2)
+        - if valor_inss
+          %ns1:ValorInss= valor_inss.round(2)
+        - if valor_ir
+          %ns1:ValorIr= valor_ir.round(2)
+        - if valor_csll
+          %ns1:ValorCsll= valor_csll.round(2)
+        - if valor_iss
+          %ns1:ValorIss= valor_iss.round(2)
+        - if outras_retencoes
+          %ns1:OutrasRetencoes= outras_retencoes.round(2)
+        %ns1:Aliquota= aliquota ? aliquota.round(2) : 5
+        - if desconto_incondicionado
+          %ns1:DescontoIncondicionado= desconto_incondicionado.round(2)
+        - if desconto_condicionado
+          %ns1:DescontoCondicionado= desconto_condicionado.round(2)
+
+      %ns1:IssRetido= iss_retido
+      - if iss_retido.to_i == 1
+        %ns1:ResponsavelRetencao= 1
+      %ns1:ItemListaServico= item_lista_servico
+      %ns1:CodigoTributacaoMunicipio= codigo_tributacao_municipio ? codigo_tributacao_municipio : 1.04
+      %ns1:Discriminacao= discriminacao
+      %ns1:CodigoMunicipio= codigo_municipio
+      %ns1:ExigibilidadeISS= 1
+      %ns1:MunicipioIncidencia= codigo_municipio
+
+    %ns1:Prestador
+      %ns1:CpfCnpj
+        %ns1:Cnpj= cnpj
+      %ns1:InscricaoMunicipal= inscricao_municipal
+
+    %ns1:TomadorServico
+      %ns1:IdentificacaoTomador
+        %ns1:CpfCnpj
+          - if tomador_cpf_cnpj.length == 14
+            %ns1:Cnpj= tomador_cpf_cnpj
+          - else
+            %ns1:Cpf= tomador_cpf_cnpj
+        - if tomador_inscricao_municipal
+          %ns1:InscricaoMunicipal= tomador_inscricao_municipal
+
+      %ns1:RazaoSocial= tomador_razao_social
+      %ns1:Endereco
+        - if tomador_endereco
+          %ns1:Endereco= tomador_endereco
+        - if tomador_numero
+          %ns1:Numero= tomador_numero
+        - if tomador_complemento
+          %ns1:Complemento= tomador_complemento
+        - if tomador_bairro
+          %ns1:Bairro= tomador_bairro
+        - if tomador_codigo_municipio
+          %ns1:CodigoMunicipio= tomador_codigo_municipio
+        - if tomador_uf
+          %ns1:Uf= tomador_uf
+        - if tomador_cep
+          %ns1:Cep= tomador_cep
+
+      %ns1:Contato
+        - if tomador_telefone
+          %ns1:Telefone= tomador_telefone
+        - if tomador_email
+          %ns1:Email= tomador_email
+
+    - if regime_especial_tributacao
+      %ns1:RegimeEspecialTributacao= regime_especial_tributacao
+    %ns1:OptanteSimplesNacional= optante_simples_nacional
+    %ns1:IncentivoFiscal= incentivador_cultural
+    %ns1:InformacoesComplementares= observacoes

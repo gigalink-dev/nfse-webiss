@@ -51,11 +51,9 @@ module NfseWebiss
       def request(method, data = {})
         service, port = soap_service
         operation = savon_client.operation(service, port, method)
-        msg = render_xml('base', data.merge(template: method.underscore, tag: "#{methods[method]}Envio"))
+        msg = render_xml('base', data.merge(template: method.underscore, tag: "#{methods[method]}"))
         operation.encoding = 'iso-8859-1'
         operation.xml_envelope = build_envelope(method, msg)
-        # WebService errado tem que forçar isso... =/
-        operation.endpoint.gsub!('http://', 'https://') if @options[:wsdl].include?('https://')
         Response.new(method, methods[method], operation.call)
       # rescue Savon::Error
       end
