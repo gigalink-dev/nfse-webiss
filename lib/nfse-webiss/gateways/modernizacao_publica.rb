@@ -8,6 +8,10 @@ module NfseWebiss
         %w(NFEServicesService NFEServices)
       end
 
+      def return_struct(method, tag)
+        %W(#{method}Response #{method}Return #{tag}Resposta)
+      end
+
       def methods
         {
           'RecepcionarLoteRps' => 'EnviarLoteRps',

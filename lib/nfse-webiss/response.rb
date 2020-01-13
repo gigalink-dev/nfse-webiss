@@ -1,12 +1,12 @@
 module NfseWebiss
   class Response
-    def initialize(method, tag, savon_response)
-      @method = method
+    def initialize(return_struct, tag, savon_response)
       @tag = tag
       @savon_response = savon_response
+      @return_struct = return_struct
     end
 
-    attr_reader :method, :tag, :savon_response, :xml
+    attr_reader :return_struct, :tag, :savon_response, :xml
 
     def retorno
       @retorno ||= parse_response
@@ -20,9 +20,11 @@ module NfseWebiss
 
     def parse_response
       body = savon_response.hash[:envelope][:body]
-      response, result, resposta = %W(#{method}Response #{method}Return #{tag}Resposta).map(&:snakecase).map(&:to_sym)
+      response, result, resposta = return_struct.map(&:snakecase).map(&:to_sym)
+
       if body[response]
-        @xml = body[response][result].gsub('&', '&amp;') # TODO: arrumar esse gsub
+        @xml = body[response][result][:output_xml].gsub('&', '&amp;') # TODO: arrumar esse gsub
+
         parsed = nori.parse(xml)
         parsed[resposta] || parsed
       else

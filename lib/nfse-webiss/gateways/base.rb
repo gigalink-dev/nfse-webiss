@@ -13,6 +13,10 @@ module NfseWebiss
         {}
       end
 
+      def return_struct(_method, _tag)
+        []
+      end
+
       def template_folder
         ''
       end
@@ -54,7 +58,7 @@ module NfseWebiss
         msg = render_xml('base', data.merge(template: method.underscore, tag: "#{methods[method]}"))
         operation.encoding = 'iso-8859-1'
         operation.xml_envelope = build_envelope(method, msg)
-        Response.new(method, methods[method], operation.call)
+        Response.new(return_struct(method, methods[method]), methods[method], operation.call)
       # rescue Savon::Error
       end
 
