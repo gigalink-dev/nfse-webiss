@@ -28,6 +28,14 @@ module NfseWebiss
         }
       end
 
+      def encodings
+        {
+          'RecepcionarLoteRpsSincrono' => 'utf-8',
+          'ConsultarLoteRps' => 'utf-8',
+          'CancelarNfse' => 'iso-8859-1'
+        }
+      end
+
       def template_folder
         'v204'
       end

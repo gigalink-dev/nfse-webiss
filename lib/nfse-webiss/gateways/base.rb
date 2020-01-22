@@ -17,6 +17,10 @@ module NfseWebiss
         []
       end
 
+      def encodings
+        {}
+      end
+
       def template_folder
         ''
       end
@@ -56,7 +60,7 @@ module NfseWebiss
         service, port = soap_service
         operation = savon_client.operation(service, port, method)
         msg = render_xml('base', data.merge(template: method.underscore, tag: "#{methods[method]}"))
-        operation.encoding = 'iso-8859-1'
+        operation.encoding = encodings[method]
         operation.xml_envelope = build_envelope(method, msg)
         Response.new(return_struct(method, methods[method]), methods[method], operation.call)
       # rescue Savon::Error

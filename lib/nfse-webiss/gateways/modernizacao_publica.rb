@@ -27,6 +27,21 @@ module NfseWebiss
         }
       end
 
+      def encodings
+        {
+          'RecepcionarLoteRps' => 'iso-8859-1',
+          'RecepcionarLoteRpsSincrono' => 'iso-8859-1',
+          'GerarNfse' => 'iso-8859-1',
+          'CancelarNfse' => 'iso-8859-1',
+          'SubstituirNfse' => 'iso-8859-1',
+          'ConsultarLoteRps' => 'iso-8859-1',
+          'ConsultarNfsePorRps' => 'iso-8859-1',
+          'ConsultarNfseServicoPrestado' => 'iso-8859-1',
+          'ConsultarNfseServicoTomado' => 'iso-8859-1',
+          'ConsultarNfsePorFaixa' => 'iso-8859-1'
+        }
+      end
+
       def template_folder
         'v202'
       end
