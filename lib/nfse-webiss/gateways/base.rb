@@ -2,9 +2,17 @@ module NfseWebiss
   module Gateways
     class Base
       def initialize(options = {})
-        define_methods
+        # define_methods
         @ssl_cert = options.delete(:ssl_cert)
         @options = options
+      end
+
+      def recepcionar_lote_rps_sincrono(body)
+        request('RecepcionarLoteRpsSincrono', body)
+      end
+
+      def consultar_lote_rps(body)
+        request('ConsultarLoteRps', body)
       end
 
       private
@@ -25,15 +33,15 @@ module NfseWebiss
         ''
       end
 
-      def define_methods
-        methods.keys.each do |method|
-          eval <<-CODE
-            def #{method.underscore}(body)
-              request('#{method}', body)
-            end
-          CODE
-        end
-      end
+      # def define_methods
+      #   methods.keys.each do |method|
+      #     eval <<-CODE
+      #       def #{method.underscore}(body)
+      #         request('#{method}', body)
+      #       end
+      #     CODE
+      #   end
+      # end
 
       def template_path
         File.expand_path("../../templates/#{template_folder}/", __FILE__)
