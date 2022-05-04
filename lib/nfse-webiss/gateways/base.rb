@@ -15,6 +15,10 @@ module NfseWebiss
         request('ConsultarLoteRps', body)
       end
 
+      def cancelar_nfse(body)
+        request('CancelarNfse', body)
+      end
+
       private
 
       def methods
