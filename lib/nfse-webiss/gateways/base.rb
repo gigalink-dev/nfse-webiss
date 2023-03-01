@@ -74,6 +74,7 @@ module NfseWebiss
         msg = render_xml('base', data.merge(template: method.underscore, tag: "#{methods[method]}"))
         operation.encoding = encodings[method]
         operation.xml_envelope = build_envelope(method, msg)
+        puts "#{operation.xml_envelope}"
         Response.new(return_struct(method, methods[method]), methods[method], operation.call)
       # rescue Savon::Error
       end
