@@ -16,7 +16,7 @@ module NfseWebiss
       end
 
       def consultar_nfse_rps(body)
-        request('ConsultarNfseRps', body)
+        request('ConsultarNfsePorRps', body)
       end
 
       private
