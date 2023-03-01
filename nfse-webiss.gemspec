@@ -17,6 +17,6 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency 'nokogiri'
   gem.add_dependency 'savon'
-  gem.add_dependency 'signer'
-  gem.add_dependency 'haml'
+  gem.add_dependency 'signer', '1.9.0'
+  gem.add_dependency 'haml', '5.2.1'
 end
