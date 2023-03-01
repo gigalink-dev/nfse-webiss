@@ -1,8 +1,11 @@
-%ns1:IdentificacaoRps
-  %ns1:Numero= numero
-  %ns1:Serie= "E"
-  %ns1:Tipo= 1
-%ns1:Prestador
-  %ns1:CpfCnpj
-    %ns1:Cnpj= cnpj
-  %ns1:InscricaoMunicipal= inscricao_municipal
+%ns1:Rps
+  %ns1:InfDeclaracaoPrestacaoServico{ Id: numero }
+    %ns1:Rps{ Id: numero }
+      %ns1:IdentificacaoRps
+        %ns1:Numero= numero
+        %ns1:Serie= "E"
+        %ns1:Tipo= 1
+    %ns1:Prestador
+      %ns1:CpfCnpj
+        %ns1:Cnpj= cnpj
+      %ns1:InscricaoMunicipal= inscricao_municipal
