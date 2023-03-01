@@ -5,7 +5,7 @@ module NfseWebiss
       SERVICOS = {
         'RecepcionarLoteRps' => 'EnviarLoteRps',
         'ConsultarSituacaoLoteRps' => 'ConsultarSituacaoLoteRps',
-        'ConsultarNfseRps' => 'ConsultarNfseRps',
+        'ConsultarNfsePorRps' => 'ConsultarNfsePorRps',
         'ConsultarNfse' => 'ConsultarNfse',
         'ConsultarLoteRps' => 'ConsultarLoteRps',
         'CancelarNfse' => 'CancelarNfse'
