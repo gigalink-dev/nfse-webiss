@@ -19,4 +19,5 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'savon'
   gem.add_dependency 'signer', '1.9.0'
   gem.add_dependency 'haml', '5.2.1'
+  gem.add_dependency 'temple', '= 0.8.2'
 end
