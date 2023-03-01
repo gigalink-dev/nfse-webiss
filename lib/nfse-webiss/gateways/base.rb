@@ -14,6 +14,10 @@ module NfseWebiss
       def consultar_lote_rps(body)
         request('ConsultarLoteRps', body)
       end
+      
+      def consultar_nfse_rps(body)
+        request('ConsultarNfseRps', body)
+      end
 
       private
 

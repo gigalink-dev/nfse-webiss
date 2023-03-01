@@ -16,6 +16,7 @@ module NfseWebiss
         {
           'RecepcionarLoteRpsSincrono' => 'EnviarLoteRpsSincronoEnvio',
           'ConsultarLoteRps' => 'ConsultarLoteRpsEnvio',
+          'ConsultarNfseRps' => 'ConsultarNfseRpsEnvio',
           'CancelarNfse' => 'CancelarNfseEnvio'
         }
       end
@@ -24,6 +25,7 @@ module NfseWebiss
         {
           'EnviarLoteRpsSincronoEnvio' => 'EnviarLoteRpsSincrono',
           'ConsultarLoteRpsEnvio' => 'ConsultarLoteRps',
+          'ConsultarNfseRpsEnvio' => 'ConsultarNfseRps',
           'CancelarNfseEnvio' => 'CancelarNfse'
         }
       end
@@ -32,6 +34,7 @@ module NfseWebiss
         {
           'RecepcionarLoteRpsSincrono' => 'utf-8',
           'ConsultarLoteRps' => 'utf-8',
+          'ConsultarNfseRps' => 'utf-8',
           'CancelarNfse' => 'iso-8859-1'
         }
       end
