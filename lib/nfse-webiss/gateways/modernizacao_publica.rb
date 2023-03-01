@@ -20,7 +20,7 @@ module NfseWebiss
           'CancelarNfse' => 'CancelarNfse',
           'SubstituirNfse' => 'SubstituirNfse',
           'ConsultarLoteRps' => 'ConsultarLoteRps',
-          'ConsultarNfsePorRps' => 'ConsultarNfseRps',
+          'ConsultarNfseRps' => 'ConsultarNfseRps',
           'ConsultarNfseServicoPrestado' => 'ConsultarNfse',
           'ConsultarNfseServicoTomado' => 'ConsultarNfse',
           'ConsultarNfsePorFaixa' => 'ConsultarNfseFaixa'
@@ -35,7 +35,7 @@ module NfseWebiss
           'CancelarNfse' => 'iso-8859-1',
           'SubstituirNfse' => 'iso-8859-1',
           'ConsultarLoteRps' => 'iso-8859-1',
-          'ConsultarNfsePorRps' => 'iso-8859-1',
+          'ConsultarNfseRps' => 'iso-8859-1',
           'ConsultarNfseServicoPrestado' => 'iso-8859-1',
           'ConsultarNfseServicoTomado' => 'iso-8859-1',
           'ConsultarNfsePorFaixa' => 'iso-8859-1'
